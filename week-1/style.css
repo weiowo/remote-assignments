@@ -33,6 +33,7 @@ nav ul li{
   margin: right 25px;
 }
 
+
 .banner{
   position: relative;
   width:100%;
@@ -42,7 +43,7 @@ nav ul li{
   width:100%;
 }
 .heading{
-  width:90%;
+  width:100%;
   color:white;
   position:absolute;
   top:43%;
@@ -54,7 +55,7 @@ nav ul li{
 nav ul li a{
   text-decoration: none ;
   color:rgb(48, 23, 23);
-  padding:0 10px;
+  padding:0 5px;
   text-align: center;
 }
 #header{
@@ -184,11 +185,15 @@ ul{
   }
   .box{
     width: 80%;
+    max-width:600px
   }
   .footer-col{
     width:100%;
-
   }
+  .banner{
+    margin: top -20px;
+  }
+
 
 }
 
@@ -199,6 +204,8 @@ ul{
   .footer-col{
     width:40%;
   }
+
+ 
 }
 
 @media screen and (min-width:800px) and (max-width:1200px){
@@ -214,6 +221,7 @@ ul{
   .icon{
     display: none;
   }
+ 
   .test3{
     display:flex;
     justify-content: center;
@@ -225,6 +233,9 @@ ul{
   button{
     max-width: 300px;
     }
+
+
+  
 }
 
 
