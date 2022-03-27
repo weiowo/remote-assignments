@@ -214,6 +214,17 @@ ul{
   .icon{
     display: none;
   }
+  .test3{
+    display:flex;
+    justify-content: center;
+  }
+  .container{
+    max-width:1500px;
+  }
+  
+  button{
+    max-width: 300px;
+    }
 }
 
 
