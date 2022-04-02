@@ -2,10 +2,10 @@ const btnToggle = document.querySelector(".btn-main");
   
   btnToggle.addEventListener("click",()=>{
     const LowerContainer = document.querySelector(".lower-container");
-    if(LowerContainer.style.display ==="none"){
-      LowerContainer.style.display = "flex";
-    }else{
+    if(LowerContainer.style.display ==="flex"){
       LowerContainer.style.display = "none";
+    }else{
+      LowerContainer.style.display = "flex";
     }
   });
 
