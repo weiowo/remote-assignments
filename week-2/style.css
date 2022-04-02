@@ -321,7 +321,7 @@ ul{
   }
   .navigation{
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     padding:0px;
     height:25px;
   }
