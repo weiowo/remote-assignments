@@ -1,6 +1,6 @@
 //Assignment1
 
-function findmax(arr) {
+function findMax(arr) {
     let maxnumber = [0,0];
   
     for(let i = 0; i < arr.length; i++) {
@@ -16,7 +16,27 @@ function findmax(arr) {
    return maxnumber;
 }
 
-console.log(findmax([[1, 2, 4, 5],[5, 2, 7, 1, 6]]));
+console.log(findMax([[1, 2, 4, 5],[5, 2, 7, 1, 6]]));
+
+//Assignment1-corrected version
+
+function findmax(arr) {
+   let maxnumber = 0;
+ 
+   for(let i = 0; i < arr.length; i++) {
+
+       if(arr[i] > maxnumber) {        
+          maxnumber = arr[i];
+       }
+     }
+  
+  return maxnumber;
+}
+
+console.log(findmax([1, 2, 4, 5]));
+console.log(findmax([5,2,7,1,6]));
+
+
 
 //Assignment2
 
@@ -57,10 +77,10 @@ console.log(calculate(Numbers));
 function avg(data){
    let sum = 0;
 
-   for (let i = 0; i < 3; i++){
+   for (let i = 0; i < data.products.length; i++){
       sum += data.products[i].price;
    }
-   let avgprice = sum/3;
+   let avgprice = sum/data.products.length;
    return avgprice ;
 } 
 
