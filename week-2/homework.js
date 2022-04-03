@@ -21,7 +21,7 @@ console.log(findMax([[1, 2, 4, 5],[5, 2, 7, 1, 6]]));
 //Assignment1-corrected version
 
 function findmax(arr) {
-   let maxnumber = 0;
+   let maxnumber = arr[0];
  
    for(let i = 0; i < arr.length; i++) {
 
