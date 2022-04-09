@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Students!</title>
+
+            <h2>Enter a number :<input type="number" id="mynumber" name="username"/></h2>
+        </label><button id="mybutton" type="submit">submit</button>
+        <h3>The answer is : </h3>
+        <div id ="ajax"></div>
+</head>
+
+    <!--這個是redirect了!
+      
+      <form action="http://localhost:3000/getData" method="GET">
+        <div>
+          <label for="number">Enter a number</label>
+          <input name="number" id="number" >
+        </div>
+        <div>
+          <button>submit</button>
+        </div>
+      </form>-->
+
+  <script>
+
+    function showNum(){
+      const val = document.getElementById('mynumber').value;
+      var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+
+            if (xhr.readyState===4){
+                document.getElementById('ajax').innerHTML= xhr.responseText;
+            }
+        };
+        xhr.open('GET', 'http://localhost:3000/getData?number='+`${val}`);
+        xhr.send();
+      };
+
+    var btn = document.getElementById("mybutton");
+    btn.addEventListener("click", showNum);
+    
+
+</script>
+
+
+
+  
+
+</body>
+</html>
