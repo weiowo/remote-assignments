@@ -1,0 +1,12 @@
+
+head
+  title Hello Students!
+  if name
+    h1 Hello, #{name}!
+  else
+    form(action='/submit' , method='post')
+     label
+      h3 Enter your name to know more :
+       input(type='text', name='username')
+      br
+     button#mybutton(type='submit') submit
