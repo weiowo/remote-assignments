@@ -31,6 +31,8 @@ app.get('/getData', (req, res) => {
         result ='Wrong Parameters'
     }else if(req.query.number % 1 !=0){
         result ='Wrong Parameters'
+    /*}else if(Number.IsInteger(req.query.number)==false){
+        result ='Wrong Parameters'*/
     }else{
     result = ((1 + Number(req.query.number))*Number(req.query.number))/2;
     }
