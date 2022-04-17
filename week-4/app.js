@@ -7,11 +7,7 @@ const Header = ()=>{
           </div>
 
           <nav className = "navigation">  
-
-            <div className="menu-btn">
-              <div className="menu-btn_hamburger"></div>
-            </div>
-
+            <MenuBtn />
             <ul className="nav-links">
               <li><a href="">Home</a></li>
               <li><a href="">Products</a></li>
@@ -26,28 +22,26 @@ const Header = ()=>{
 
 // 想這麼做hamburger menu但無法顯示
 
-// class MenuBtn extends React.Component
-// {
-//   state={
-//     Showbutton:false,
-//   }
-//   render()
-//   {
-//     var MenuChange = e =>
-//     {
-//       this.setState({Showbutton:!this.state.Showbutton});
-//     }
-//     const menuBtn = document.querySelector('.menu-btn');
-//     const x = this.state.Showbutton;
-//     return(
-//       <div className="menu-btn">
-//           <div className="menu-btn_hamburger" onClick={MenuChange}>
-//           {x? menuBtn.classList.add('open'): menuBtn.classList.remove('open')}
-//       </div>
-//       </div>
-//     )
-//   }
-// }
+class MenuBtn extends React.Component
+{
+  state={
+    Showbutton:false,
+  }
+  render()
+  {
+    var MenuChange = () =>
+    {
+      this.setState({Showbutton:!this.state.Showbutton});
+      console.log("test");
+    }
+    const menuBtn = document.querySelector('.menu-btn'); //下面從classList.add改到className的方式後這個變數暫沒用到
+    const x = this.state.Showbutton;
+    return(
+      <div className={x ? 'menu-btn_hamburger menu-btn.open' : 'menu-btn_hamburger'} onClick={MenuChange}>
+      </div>
+    )
+  }
+}
 
 //原javascript功能參考
 
@@ -277,33 +271,6 @@ const Footer =()=>{
 
 
 
-//some testing
-
-const Headerr=(props)=>{
-  return(
-    <header>
-      <h1>{props.title}</h1>
-      <span className="stats">{props.totalplayer}</span>
-    </header>
-  );
-}
-
-const Player =()=>{
-    return(
-        <div className="Player">
-            <span className="playe-name">
-                Guil
-            </span>
-
-            <div className="conter">
-                <button className = "counter-action decrement"> - </button>
-                <span className="counter-score">35</span>
-                <button className = "counter-action increment"> + </button>
-            </div>
-        </div>
-    );
-}
-
 
 
 class App extends React.Component{
@@ -362,6 +329,7 @@ root.render(<App />)
   </div>
 
   <nav class = "navigation">
+    
     <div class="menu-btn">
       <div class="menu-btn_hamburger"></div>
     </div>
