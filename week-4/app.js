@@ -1,3 +1,4 @@
+
 const Header = ()=>{
     return(
         <header className = "header">
@@ -8,7 +9,7 @@ const Header = ()=>{
 
           <nav className = "navigation">  
             <MenuBtn />
-            <ul className="nav-links">
+            <ul class="nav-links">
               <li><a href="">Home</a></li>
               <li><a href="">Products</a></li>
               <li><a href="">About</a></li>
@@ -20,7 +21,6 @@ const Header = ()=>{
     );
 }
 
-// 想這麼做hamburger menu但無法顯示
 
 class MenuBtn extends React.Component
 {
@@ -34,14 +34,25 @@ class MenuBtn extends React.Component
       this.setState({Showbutton:!this.state.Showbutton});
       console.log("test");
     }
-    const menuBtn = document.querySelector('.menu-btn'); //下面從classList.add改到className的方式後這個變數暫沒用到
     const x = this.state.Showbutton;
     return(
-      <div className={x ? 'menu-btn_hamburger menu-btn.open' : 'menu-btn_hamburger'} onClick={MenuChange}>
+      
+      <div className={x ? "menu-btn open" : "menu-btn"} onClick={MenuChange}>
+        <div className="menu-btn_hamburger"></div>
+        <ul className={x? "nav-links active": "nav-links "} >
+              <li><a href="">Home</a></li>
+              <li><a href="">Products</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contact</a></li>
+              <li><a href="">Account</a></li>
+       </ul>
+
       </div>
+
     )
   }
 }
+
 
 //原javascript功能參考
 
@@ -148,8 +159,8 @@ class ShowandHide extends React.Component
        <center>
         <div className="top-container">
         <div className="btn-cta">
-
-        <button className="btn-main" onClick={Handlechange}>{x?"Call to Action":"Call to Action"}</button>
+        <button className="btn-main" onClick={Handlechange}>
+        {x?"Call to Action":"Call to Action"}</button>
         {
           x && 
           (<div>
@@ -268,8 +279,6 @@ const Footer =()=>{
     </footer>
   )
 }
-
-
 
 
 
